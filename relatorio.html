@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELATÓRIO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="agendamento.js"></script>
+   
+    <script> 
+    window.onload=carregaragencia();
+    </script>
+ 
+</head>
+<body onload="carregarusuario()">
+
+    <div class = "container">
+        <div class = "row">
+
+            <div class = "col-11">
+                <h3 style="text-align: center;"> --- CENTRAL DE AGENDAMENTO --- </h3>
+            </div>
+
+            <div class = "col-1">
+                <button onclick="deslogar()" type="button" class="btn btn-primary">Logout</button>
+            </div>
+
+        </div>
+
+       
+
+
+
+        <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm2  div1"> </div>
+            <div class="col-lg-8 col-md-8 col-sm8 div2 ">
+                <form>
+
+
+
+                    <fieldset>
+                        <legend align="center">Consulta Agendamentos.</legend>
+
+                        <div class="row">
+                            <div id="foto" class="col-2"></div>
+                            <div id="dados" class="col-6"></div>
+
+                            
+                            
+                        </div>
+                    </fieldset>
+                </form>
+                <form id="formuser" method="POST">
+                    <br> <br>
+                    <fieldset>
+                    <legend>Selecione seu relatório.</legend>
+        
+                    <br>
+                    
+                    <br>
+            
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input id="chkagencia" type="checkbox" aria-label="Checkbox for following text input">
+                                      </div>
+                                    <span class="input-group-text" id="addon-wrapping">Agência</span>
+                                </div>
+                                <select id="cmbagencia" class="custom-select" >
+                                </select>
+                              </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input id="chkdata" type="checkbox" aria-label="Checkbox for following text input">
+                                      </div>
+                                    <span class="input-group-text" id="addon-wrapping">Data</span>
+                                </div>
+                                <input id="txtdata" type="date" class="form-control" placeholder="<dd/mm/aaaa>" aria-label="Username" aria-describedby="addon-wrapping">
+                              </div>
+                        </div>
+                    </div>
+                        <br>
+
+                     <div class="row">
+                        <div class="col-12">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input id="chkcliente" type="checkbox" aria-label="Checkbox for following text input">
+                                      </div>
+                                    <span class="input-group-text" id="addon-wrapping">Cliente</span>
+                                </div>
+                                <input id="txtcliente" type="text" class="form-control" placeholder="Cliente" aria-label="Username" aria-describedby="addon-wrapping">
+                              </div>
+                        </div>
+                    </div>
+            
+                    <br><br>
+                    <button onclick="filtrar()" type="button" class="btn btn-primary">Filtrar</button>
+            
+                    <br><br>
+                    <h3>Resultado</h3>
+                    <br>
+                    <h4 id="resultado"></h4>
+                </div>
+                    
+                
+
+               
+                </fieldset>
+            
+                </form>
+
+
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm2 div3"> </div>
+
+            <!-- Chamada da bilbliota em Javascript internet-->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+</body>
+</html>

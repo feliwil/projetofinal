@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheduleSystem - Agendamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript" src="agendamento.js"></script>
+</head>
+<body onload = "carregaragencia()">
+    <div class = "container">
+        <div class = "row">
+
+            <div class = "col-12">
+                <h3 style="text-align: center;"> --- CENTRAL DE AGENDAMENTO --- </h3>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="container">
+             
+        <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm2  div1"></div>
+        <div class="col-lg-8 col-md-8 col-sm8 div2 ">
+            <form>
+
+                
+
+                <fieldset >
+                    <legend align="center">Digite seus dados para realização do agendamento.</legend>
+
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Cliente</label>
+                  <input type="texto" class="form-control" id="txtcliente" placeholder="<Digite seu nome>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email</label>
+                    <input type="email" class="form-control" id="txtemail" placeholder="<Digite seu email>">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Celular/WhatsApp</label>
+                    <input type="email" class="form-control" id="txtcelular" placeholder="<Digite seu celular.>">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Data</label>
+                    <input type="date" class="form-control" id="txtdata" placeholder="<dd/mm/aaaa>">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Agência</label>
+                    <select class="form-control" id="cmbagencia">
+                    
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    
+                    <label for="exampleFormControlSelect1">Horario Inicio (agendamentos 30 min) </label>
+                    <select class="form-control" id="cmbhora">
+                        <option value="10:00" selected> 10:00</option>
+                        <option value="10:30"> 10:30</option>
+                        <option value="11:00"> 11:00</option>
+                        <option value="11:30"> 11:30</option>
+                        <option value="12:00"> 12:00</option>
+                        <option value="12:30"> 12:30</option>
+                        <option value="13:00"> 13:00</option>
+                        <option value="13:30"> 13:30</option>
+                        <option value="14:00"> 14:00</option>
+                        
+                    </select>
+                  </div>
+
+                
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Obvervação:</label>
+                    <input type="text" class="form-control" id="txtobs" placeholder="<Caso tenha alguma observação, cadastre aqui.>">
+                </div>
+                    <br>
+
+                    <button onclick = "cadastrar()" type="button" class="btn btn-primary">Cadastrar</button>
+                </fieldset>
+                
+              </form>
+
+
+
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm2 div3"></div>
+
+
+
+
+    </div>
+
+
+
+    <script>
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        dd = dd + 1;
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("txtdata").setAttribute("min", today);
+        today = dd + '/' + mm + '/' + yyyy;
+    </script>
+
+<!-- Chamada da bilbliota em Javascript internet-->    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+       
+
+</body>
+</html>
