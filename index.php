@@ -13,12 +13,12 @@
       <div class = "container">
          <div class = "row">
             <div class = "col-12">
-               <h3 style="text-align: center;"> --- Pagina Principal  --- </h3>
+               <h3 style="text-align: center;"> --- CENTRAL DE AGENDAMENTO --- </h3>
             </div>
          </div>
          <br> 
-         <a href="login.html"> PAGINA DE LOGINS - GERENTE </a> <BR>
-         <a href="agendamento.html"> PAGINA DE LOGINS - CLIENTE </a> <BR>
+         <a href="login.html"> PAGINA DE LOGIN - GERENTE </a> <BR>
+         <a href="agendamento.html"> PAGINA DE AGENDAMENTO - CLIENTE </a> <BR>
       </div>
       <!-- Chamada da bilbliota em Javascript internet-->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
