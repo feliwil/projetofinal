@@ -1,5 +1,5 @@
 function carregaragencia() {
-    fetch("http://localhost:8080/agencia")
+    fetch("https://api-agendamento-william.herokuapp.com/agencia")
         .then(res => res.json())
         .then(res => preencheragencia(res));
 }
@@ -46,7 +46,7 @@ function preencheragencia(lista) {
                 "Content-type": "application/json"
             }
         }
-        fetch("http://localhost:8080/cadastrar", cabecalho)
+        fetch("https://api-agendamento-william.herokuapp.com/cadastrar", cabecalho)
             .then(res => res.json())
             .then(res => { window.alert("Gravado com sucesso!") })
             .catch(err => { window.alert("Ocorreu um erro") })
