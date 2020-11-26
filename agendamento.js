@@ -50,4 +50,75 @@ function preencheragencia(lista) {
             .then(res => res.json())
             .then(res => { window.alert("Gravado com sucesso!") })
             .catch(err => { window.alert("Ocorreu um erro") })
+
+
+
     }
+
+
+
+    function filtrar(){
+        
+        if (
+            document.getElementById("chkagencia").checked==false && 
+            document.getElementById("chkdata").checked==false &&
+            document.getElementById("chkcliente").checked==false
+            ){
+    
+                var rota = "/agendamento";
+        }else{
+            var rota = "relatoriopor";
+            if (document.getElementById("chktitulo").checked==true){
+                rota+="titulo";
+            }
+            if (document.getElementById("chkartista").checked==true){
+                rota+="artista";
+            }
+            var objeto= {
+                titulo: document.getElementById("txttitulo").value ,
+                artista : {
+                    id : document.getElementById("cmbartistas").value
+                }
+            };
+            
+            function montartabela(lista) {
+                var saida = 
+               " <table border='1' align='center'> <tr> " +
+               "<th>Agência</th>     <th>Cliente</th>       <th> Celular </th> </tr>"
+            
+              
+            
+               for (cont = 0; cont<lista.length; cont++) {
+            
+                saida+=
+                    "<tr>" +
+                    "<td>" + lista[cont].nomeAgencia + "</td>" +
+                    "<td>" + lista[cont].nomeCli + "</td>" +
+                    "<td>" + lista[cont].celularCli + "</td>"+
+                    "</tr>";
+               }
+               saida+="</table>";
+               document.getElementById("resultado").innerHTML=saida;
+            
+            }
+            
+        
+            var cabecalho = {
+                method:"POST",
+                body : JSON.stringify(objeto),
+                headers : {
+                    "content-type" : "application/json"
+                }
+            }
+    
+            fetch("https://api-agendamento-william.herokuapp.com" + rota, cabecalho)
+                .then(res => res.json())
+                .then(res => montartabela(res))
+                .catch(err => {
+                    window.alert("Não existem agendamentos.");
+                });
+        }    
+    }
+
+
+    
