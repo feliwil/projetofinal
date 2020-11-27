@@ -15,7 +15,7 @@ function logar() {
 
     }
 
-    fetch("https://api-agendamento-william.herokuapp.com/login", cabecalho).
+    fetch("http://localhost:8080/login", cabecalho).
         then(res => res.json()).
         then(res => {
             localStorage.setItem("logado", JSON.stringify(res));
@@ -34,7 +34,7 @@ function carregarusuario() {
     } else {
         var usuariojson = JSON.parse(usuariologado);
         document.getElementById("foto").innerHTML = "<img width='100%' height='100%' alt='Foto não encontrada' src=imagens/" + usuariojson.foto + ">"
-        document.getElementById("dados").innerHTML="<h3>" + usuariojson.nome + " " + "("+ usuariojson.racf + ")</h3>"
+        document.getElementById("dados").innerHTML="<h3>" + usuariojson.nome + " " + "(Racf: "+ usuariojson.racf + ")</h3>"
 
     }
 
